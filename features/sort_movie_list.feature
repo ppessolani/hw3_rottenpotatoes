@@ -22,10 +22,13 @@ Background: movies have been added to database
   And I am on the RottenPotatoes home page
 
 Scenario: sort movies alphabetically
+  When I check all the ratings
+  When I press "ratings_submit"
   When I follow "Movie Title"
-  # your steps here
+  Then I should see "Aladdin" before "Raiders of the Lost Ark"
 
 Scenario: sort movies in increasing order of release date
+  When I check all the ratings
+  When I press "ratings_submit"
   When I follow "Release Date"
-  # your steps here
-
+  Then I should see "Raiders of the Lost Ark" before "Amelie"
